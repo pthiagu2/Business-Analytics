@@ -1,0 +1,135 @@
+# Logisitc Regression
+
+# Logistic Regression is a multiple regression with a categorical outcome variable (1,0)
+# and predictor variables that are categorical or continuous.
+
+#Load the dataset in R
+library(readr)
+donor <- read_csv("~/Desktop/BA PROJECT/donor.csv")
+View(donor)
+
+plot(donor$Age ~ donor$Amount)
+#Most of the donors are donating less and one person has donated close to 10000
+
+plot(donor$Amount ~ donor$age_category)
+#We find that the donations are maximum for 60 years old.
+
+#Approach:
+#We determined that if transaction id is null or amount is null,we consider the person to be non-donor.
+#We converted gender,Country,State,Amount and transaction id into 0 and 1
+
+
+donor$donorcol <- ifelse((donor$TRANSACTION_ID == "NULL"), 0,1 )
+donor$Gender <- ifelse((donor$Gender == "Male"), 0,1 )
+donor$Country <- ifelse((donor$Country == "USA"), 0,1 )
+donor$STATE <- ifelse((donor$STATE == "No State"), 0,1 )
+donor$Amount <- ifelse((donor$Amount == "NULL"), 0,1 )
+
+View(donor3)
+
+fit <- glm(donorcol ~ Age + Gender + Country + STATE + Amount, data = donor, family = binomial)
+summary(fit)
+
+fit2 <- glm(donorcol ~ Age + Gender, data = donor, family = binomial)
+summary(fit2)
+
+# Model Chi-Square Statistic
+
+fit_chi <- fit$null.deviance - fit$deviance
+
+fit_chi
+
+fit2_chi <- fit2$null.deviance - fit2$deviance
+
+fit2_chi
+
+# We next need to get the difference in the degrees of freedom between the model and the
+# null model:
+
+fit_chi_df <- fit$df.null - fit$df.residual 
+
+fit_chi_df
+
+fit2_chi_df <- fit2$df.null - fit2$df.residual 
+
+fit2_chi_df
+  
+# finally, we need to calculate the probability associated with the Chi-Square Statistic:
+
+fit_chisq.prob <- 1 - pchisq(fit_chi, fit_chi_df)
+  
+fit_chisq.prob
+
+fit2_chisq.prob <- 1 - pchisq(fit2_chi, fit2_chi_df)
+  
+fit2_chisq.prob
+
+# First model We get a value of 0 - this probability is less than .05, 
+#Second model we get a value of 0.005 which is less than .05
+# therefore we can reject the null hypothesis for both models indicating that the model is not better than chance at predicting the outcome.
+
+
+
+
+# -------------
+
+# The Odds Ratio
+
+# If the odds ratio is greater than 1 it means that as the predictor increases, the odds of the 
+# outcome occuring increase.
+# A value less than 1 means that as the predictor increases, the odds of the outcome occuring 
+# decrease.
+
+exp(fit$coefficients)
+
+exp(fit2$coefficients)
+
+
+# Checking Residuals for model1
+
+donor$predicted_probabilities <- fitted(fit) # Here we are getting the model predictions.
+donor$standardized_residuals <- rstandard(fit)
+donor$studentized_residuals <- rstudent(fit)
+donor$dfbeta <- dfbeta(fit)
+donor$dffit <- dffits(fit)
+donor$leverage <- hatvalues(fit)
+donor$standardized_residuals
+
+
+View(donor)
+
+# Testing for multicollinearity
+
+# If the largest VIF is greater than 10 then there is a problem.
+# If the average VIF is substantially greater than 1 then there may be bias in the model.
+# If the the tolerence is below .1 that indicates a serious problem.
+# Tolerence below .2 indicates a potential problem.
+
+library(car)
+vif(fit)
+1/vif(fit) # Tolerence
+mean(vif(fit)) # Average
+#for model 1 we have collinearity issue
+
+vif(fit2)
+1/vif(fit2) # Tolerence
+mean(vif(fit2)) # Average
+#for model 2 we dont have collinearity issue
+
+# Linearity of the Logit
+
+# First we need to create the variables we will use for the test,We use it for fit2:
+
+donor$logAge <- log(donor$Age)*donor$Age
+donor$logGender <- log(donor$Gender)*donor$Gender
+
+
+View(donor)
+
+fit2_test <- glm(donorcol ~ Age + Gender + logAge + logGender,
+                   data = donor,
+                   family = binomial)
+
+summary(fit2_test)
+
+

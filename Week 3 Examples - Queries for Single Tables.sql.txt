@@ -1,0 +1,215 @@
+/*
+	SQL QUERIES FOR SINGLE TABLES
+
+	Written by John Gough | 09.11.2017
+
+*/
+
+-- Example of a Select Statement
+-- Watch your spelling - MySQL is also
+-- case sensitive when it comes to column and
+-- table names. Check those first if you
+-- get an error message.
+
+select *
+from jgough2_sakila.actor
+where last_name like 'C%'
+order by Last_Name
+limit 5;
+
+-- A select statement which returns rentals between the given
+-- dates, ordering them by date.
+
+select *
+from jgough2_sakila.rental
+where rental_date between '2005-01-01' and '2005-06-01'
+order by rental_date;
+
+-- A select statement which returns an empty result set.
+
+select *
+from jgough2_sakila.rental
+where rental_date < '2000-01-01';
+
+-- A select statement which returns an actors full name.
+
+select actor_id, concat(first_name, ' ', last_name) as Full_Name
+from  jgough2_sakila.actor;
+
+-- A select statement which renames the columns of a result set.
+
+select category_id, name, name as Genre
+from jgough2_sakila.category;
+
+-- A select statement which doesn't have a calculated column name.
+
+select concat(address, ', ', district, ' ', postal_code)
+from jgough2_sakila.address;
+
+-- A select statement with a calculated  column using arithmetic 
+-- operators.
+
+select invoice_total - payment_total - credit_total as Payment_Due
+from jgough2_ex.active_invoices;
+
+-- A select statement with a calculated  column using arithmetic 
+-- operators, using parentheses to control the sequence of operations.
+
+select (10 + 5)/2;
+
+-- A select statement using the right function to return the first
+-- two digits on the right of the date as the day of the month.
+
+select invoice_date, right(invoice_date, 2) as Day_of_Month
+from jgough2_ap.invoices;
+
+-- A select statement that rounds an decimal to a whole number.
+
+select invoice_total, Round(invoice_total) as Rounded_Invoice_Total
+from jgough2_ex.active_invoices;
+
+-- A select statement which transforms the invoice date from one format
+-- to another. 
+
+select invoice_date, date_format(invoice_date, '%m/%d/%y') as 'MM/DD/YYYY'
+from jgough2_ap.invoices;
+
+-- Two queries about vendor city and state. One returns all city and state
+-- rows, the other only the distinct pairings, de-duping the results
+
+select vendor_city, vendor_state 
+from jgough2_ap.vendors 
+order by vendor_state, vendor_city;
+
+select distinct vendor_city, vendor_state 
+from jgough2_ap.vendors 
+order by vendor_state, vendor_city;
+
+-- A select statement which uses the logical opperator 'or'.
+
+select *
+from jgough2_sakila.address
+where district like 'Taipei' or district like 'Tahiti'
+order by district;
+
+-- A select statement with a compound condition.
+
+select *, invoice_total - payment_total - credit_total as Outstanding_Balance
+from jgough2_ap.invoices
+where invoice_total - payment_total - credit_total  > 0;
+
+-- A select statement with an example of an IN phrase.
+
+select *
+from jgough2_sakila.category
+where name in ('Action','Children','Comedy');
+
+-- A select statement with an example of a NOT IN phrase.
+
+select *
+from jgough2_sakila.category
+where name not in ('Action','Children','Comedy');
+
+
+-- A select statement with a between phrase.
+
+select *
+from jgough2_ex.active_invoices
+where invoice_date between '2011-01-11' and '2011-04-18';
+
+-- A select statement with a NOT between phrase.
+
+select *
+from jgough2_ex.active_invoices
+where invoice_date not between '2011-01-11' and '2011-04-18';
+
+-- A select statement with a LIKE phrase.
+
+select *
+from jgough2_ex.customers
+where customer_zip like '5%';
+
+-- A select statement which returns NULLS
+
+select *
+from jgough2_ex.null_sample
+where invoice_total is null;
+
+
+-- A select statement which excludes  NULLS
+
+select *
+from jgough2_ex.null_sample
+where invoice_total is not null;
+
+-- A select statement with an ORDER BY clause that
+-- sorts by one column ascending. (Default)
+
+select *
+from jgough2_ex.null_sample
+order by invoice_total asc;
+
+-- A select statement with an ORDER BY clause that
+-- sorts by one column descending.
+
+select *
+from jgough2_ex.null_sample
+order by invoice_total desc;
+
+-- REGEX, returns any address with the string 'dr'. 
+
+select address
+from jgough2_sakila.address
+where address regexp 'dr';
+
+-- REGEX, returns any address where the string begins with '16'.
+
+select address
+from jgough2_sakila.address
+where address regexp '^16';
+
+-- REGEX, returns any address where the string ends with 'ne'.
+
+select address
+from jgough2_sakila.address
+where address regexp 'ne$';
+
+-- REGEX, returns any address where the string contains 'ne' or 'dr'.
+
+select address
+from jgough2_sakila.address
+where address regexp 'ne|dr';
+
+-- REGEX, returns any address where the string contains either
+-- 'my' or 'mn'.
+
+select address
+from jgough2_sakila.address
+where address regexp 'm[yn]';
+
+-- REGEX, returns any address where the string contains either
+-- 'm' + any letter m through z.
+
+select address
+from jgough2_sakila.address
+where address regexp 'm[m-z]';
+
+
+-- REGEX, returns any variation of Damien either Damien 
+-- or Damion.
+
+select vendor_contact_last_name
+from jgough2_ap.vendors
+where vendor_contact_last_name regexp 'dami[eo]n';
+
+
+-- REGEX, returns any city that ends with an 'n' preceded by a vowel
+-- and at least one other letter.
+
+select distinct vendor_city
+from jgough2_ap.vendors
+where vendor_city regexp '[a-z][aeiou]n$';
+
+
+
+

@@ -1,0 +1,642 @@
+/*
+	WEEK 4 | AGGREGATE QUERIES, SUBQUERIES, AND SET OPERATIONS
+
+	WRITTEN BY J. GOUGH
+	2017.09.18
+
+*/
+
+-- MYSQL FUNCTION REFERENCE: https://dev.mysql.com/doc/refman/5.7/en/func-op-summary-ref.html 
+
+-- ============================================================================
+-- ============================================================================
+
+-- EXPLICIT JOIN
+
+select count(*)
+from jgough2_NorthWind.Orders O
+                join jgough2_NorthWind.OrderDetails D
+                                on O.OrderID = D.OrderID
+                join jgough2_NorthWind.Products P
+                                on D.ProductID = P.ProductID;
+
+
+-- IMPLICIT JOIN
+
+select count(*)
+from jgough2_NorthWind.Orders O ,jgough2_NorthWind.OrderDetails D, jgough2_NorthWind.Products P
+where O.OrderID = D.OrderID 
+	and D.ProductID = P.ProductID;
+    
+-- PERFORMANCE-WISE THEY ARE THE SAME.
+
+-- WOULD THERE BE A DRAW BACK TO THE IMPLICIT 
+-- APPROACH IN THIS QUERY?
+
+SELECT *
+FROM jgough2_ap.vendors V
+	JOIN jgough2_ap.invoices I
+		ON V.vendor_id = I.vendor_id
+	JOIN jgough2_ap.terms T
+		on I.terms_id = T.terms_id
+	JOIN jgough2_ap.terms T1
+		on I.terms_id = T1.terms_id
+WHERE INVOICE_TOTAL > 500
+	AND V.vendor_name LIKE '%D%'
+    AND V.vendor_address1 LIKE '%A%'
+    AND (V.VENDOR_STATE LIKE 'CA' 
+		OR V.VENDOR_STATE LIKE 'MI')
+	AND PAYMENT_TOTAL > 100
+    AND T.TERMS_ID BETWEEN 1 AND 3
+    AND (EXTRACT(YEAR FROM INVOICE_DUE_DATE) = 2011
+		OR EXTRACT(YEAR FROM INVOICE_DATE) = 2011
+		OR EXTRACT(YEAR FROM PAYMENT_DATE) = 2011)
+	OR V.VENDOR_ID IN (	SELECT V4.VENDOR_ID 
+						FROM jgough2_ap.vendors V4
+                        WHERE VENDOR_NAME IN (	'Zylka Design',
+												'Data Reproductions Corp',
+												'Computerworld',
+												'Bertelsmann Industry Svcs. Inc'))
+GROUP BY V.VENDOR_NAME; 
+
+
+-- ============================================================================
+-- ============================================================================
+
+/*
+	COMMON AGGREGATE FUNCTIONS:
+
+	AVG() - The average of non-NULL values.
+	SUM() - The total of non-NULL values.
+	MIN() - The lowest non-NULL value.
+	MAX() - The highest non-NULL value.
+	COUNT() - The number of all non-NULL values.
+	COUNT(*) - The number of rows selected by the query.
+
+*/
+
+SELECT AVG(AMOUNT) AS AVERAGE_PAYMENT
+FROM jgough2_sakila.payment; 
+
+SELECT SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.payment; 
+
+SELECT MIN(AMOUNT) AS SMALLEST_PAYMENT
+FROM jgough2_sakila.payment; 
+
+SELECT MAX(AMOUNT) AS LARGEST_PAYMENT
+FROM jgough2_sakila.payment; 
+
+SELECT COUNT(AMOUNT) AS TOTAL_MAX_PAYMENTS
+FROM jgough2_sakila.payment
+WHERE AMOUNT = '11.99'; 
+
+SELECT COUNT(*) AS TOTAL_PAYMENTS
+FROM jgough2_sakila.payment; 
+
+-- ============================================================================
+-- ============================================================================
+
+/* 
+		SUMMARY QUERIES
+
+		THESE USE AGGREGATE FUNCTIONS TO SUMMARIZE TABLE(S). 
+
+*/
+
+-- BASIC SUMMARY QUERY
+
+SELECT 
+		'AFTER 5/31/2005' AS DATE_RANGE,
+		COUNT(*) AS NUMBER_OF_PAYMENTS,
+		ROUND(AVG(AMOUNT), 2) AS AVG_PAYMENT_AMOUNT,
+		SUM(AMOUNT) AS TOTAL_REVENUE,
+		MAX(AMOUNT) AS HIGHEST_PAYMENT_AMOUNT,
+		MIN(AMOUNT) AS LOWEST_PAYMENT_AMOUNT
+FROM jgough2_sakila.payment
+WHERE payment_date >= '2005-06-01'
+	AND AMOUNT > 0; 
+
+
+-- SUMMARY QUERY THAT WORKS ON NON-NUMERIC COLUMNS
+
+SELECT 
+		MIN(NAME) AS FIRST_CUSTOMER,
+		MAX(NAME) AS LAST_CUSTOMER,
+		COUNT(NAME) AS NUMBER_OF_CUSTOMERS
+FROM jgough2_sakila.customer_list; 
+
+-- A SUMMARY QUERY THAT USES THE DISTINCT KEYWORD
+
+SELECT 'PAYMENTS SINCE JAN 01, 2006' AS METRIC,
+		COUNT(DISTINCT L.ID) AS TOTAL_PAYING_CUSTOMERS,
+		COUNT(payment_id) AS TOTAL_PAYMENTS,
+		ROUND(AVG(AMOUNT), 2) AS AVG_PAYMENT_AMOUNT,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.customer_list L
+	JOIN jgough2_sakila.payment P 
+		ON L.ID = P.customer_id
+WHERE payment_date >= '2006-01-01';
+
+-- GROUP BY AND HAVING CLAUSES
+
+SELECT 
+		COUNTRY, 
+		COUNT(DISTINCT L.ID) AS TOTAL_PAYING_CUSTOMERS,
+		ROUND(AVG(AMOUNT), 2) AS AVG_PAYMENT_AMOUNT,
+		COUNT(DISTINCT L.ID) AS TOTAL_PAYING_CUSTOMERS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.customer_list L
+	JOIN jgough2_sakila.payment P 
+		ON L.ID = P.customer_id
+GROUP BY COUNTRY
+HAVING SUM(AMOUNT) > 100
+ORDER BY TOTAL_REVENUE DESC; 
+
+-- SUMMARY QUERY THAT COUNTS THE NUMBER OF RENTALS BY CUSTOMER
+
+SELECT 
+		NAME AS 'CUSTOMER',
+		COUNT(RENTAL_ID) AS TOTAL_RENTALS
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+GROUP BY NAME
+ORDER BY COUNT(RENTAL_id) DESC; 
+
+-- A SUMMARY QUERY THAT RETURNS CUSTOMERS BY COUNTRY
+
+SELECT 	
+		COUNTRY,
+		NAME AS 'CUSTOMER',
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+GROUP BY COUNTRY, NAME
+ORDER BY COUNTRY, TOTAL_REVENUE DESC; 
+
+-- A SUMMARY QUERY THAT RETURNS BEST CUSTOMERS BY COUNTRY
+-- BEST CUSTOMER IS ARBITRARILY DEFINED HERE AS A CUSTOMER WITH
+-- MORE THAN $100 IN RENTALS.
+
+SELECT 	
+		COUNTRY,
+		NAME AS 'CUSTOMER',
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+GROUP BY COUNTRY, NAME
+HAVING TOTAL_REVENUE > 100
+ORDER BY COUNTRY, TOTAL_REVENUE DESC; 
+
+/*
+	DIFFERENCE BETWEEN WHERE AND HAVING CLAUSES:
+
+	HAVING CLAUSES APPLY CONDITIONS TO GROUPS
+	WHERE CLAUSES APPLY CONDITIONS TO ROWS BEFORE THEY ARE GROUPED
+
+	HAVING CLAUSES CAN HAVE AGGREGATE FUNCTIONS AS THEY ARE APPLIED AFTER GROUPING
+	WHERE CLAUSES CANNOT BECAUSE THEY ARE APPLIED BEFORE GROUPING
+
+	HAVING CLAUSES CAN ONLY APPLY TO COLUMNS INCLUDED IN THE SELECT CLAUSE
+	WHERE CLAUSES CAN APPLY TO ANY COLUMN IN THE BASE TABLE. 
+*/
+
+SELECT 
+	'HAVING CLAUSE' AS SEARCH_CONDITION,
+	VENDOR_NAME,
+    INVOICE_ID,
+	INVOICE_TOTAL
+FROM jgough2_ap.vendors V
+	JOIN jgough2_ap.invoices I
+		ON V.vendor_id = I.vendor_id
+WHERE vendor_name = 'Zylka Design';
+
+		-- GROUP BY LOOKS AT ENTIRE GROUP - HAVING ALLOWS YOU TO FILTER ON THE RESULT OF THE GROUP
+        -- HAVING PERFORMS CALCULATIONS AT THE GROUP LEVEL
+
+SELECT 	(313.55 + 565.15 + 601.95 + 639.77 + 904.14 + 953.10 + 1000.46 + 1962.13) AS SUM,  
+		(313.55 + 565.15 + 601.95 + 639.77 + 904.14 + 953.10 + 1000.46 + 1962.13)/8 AS AVG,
+        
+		-- THE WHERE CLAUSE FILTERS THE DATA FIRST AND THEN PERFORMS THE AGGREGATE FUNCTION.
+        -- WHERE PERFORMS CALCULATIONS AT THE ROW LEVEL
+        
+        (565.15 + 601.95 + 639.77 + 904.14 + 953.10 + 1000.46 + 1962.13) AS WHERE_SUM,
+        (565.15 + 601.95 + 639.77 + 904.14 + 953.10 + 1000.46 + 1962.13)/7 AS WHERE_AVERAGE;
+
+SELECT -- RETURNS ALL GROUPS WHERE THE AVERAGE INVOICE TOTAL IS GREATER THAN $500
+	'HAVING CLAUSE' AS SEARCH_CONDITION,
+	VENDOR_NAME,
+	COUNT(*) AS INVOICE_QTY,
+	ROUND(AVG(INVOICE_TOTAL),2) AS INVOICE_AVG
+FROM jgough2_ap.vendors V
+	JOIN jgough2_ap.invoices I
+		ON V.vendor_id = I.vendor_id
+WHERE vendor_name = 'Zylka Design'
+GROUP BY VENDOR_NAME
+HAVING AVG(INVOICE_TOTAL) > 500
+UNION ALL
+SELECT -- RETURNS ALL ROWS WHERE THE INVOICE_TOTAL IS > $500 AND GROUPS THEM BY VENDOR_NAME.
+	'WHERE CLAUSE' AS SEARCH_CONDITION,
+	VENDOR_NAME,
+	COUNT(*) AS INVOICE_QTY,
+	ROUND(AVG(INVOICE_TOTAL),2) AS INVOICE_AVG
+FROM jgough2_ap.vendors V
+	JOIN jgough2_ap.invoices I
+		ON V.vendor_id = I.vendor_id
+WHERE INVOICE_TOTAL > 500
+	AND vendor_name = 'Zylka Design'
+GROUP BY VENDOR_NAME; 
+
+-- COMPOUND CONDITION IN THE HAVING CLAUSE
+
+SELECT 	
+		COUNTRY,
+		NAME AS 'CUSTOMER',
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+GROUP BY COUNTRY, NAME
+HAVING TOTAL_REVENUE > 100
+	AND COUNT(R.RENTAL_ID) > 30
+ORDER BY COUNTRY, TOTAL_REVENUE DESC; 
+
+-- COMPOUND CONDITION IN THE HAVING CLAUSE WITH A WHERE CLAUSE
+
+SELECT 	
+		COUNTRY,
+		NAME AS 'CUSTOMER',
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+WHERE RENTAL_DATE BETWEEN '2005-01-01' AND '2005-08-01'
+GROUP BY COUNTRY, NAME
+HAVING TOTAL_REVENUE > 100
+	AND COUNT(R.RENTAL_ID) > 30
+ORDER BY COUNTRY, TOTAL_REVENUE DESC;
+
+-- FINAL SUMMARY ROWS USING ROLLUP 
+
+SELECT 	
+		IFNULL(COUNTRY, 'TOTALS') AS COUNTRY,
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+WHERE RENTAL_DATE BETWEEN '2005-01-01' AND '2005-05-30'
+GROUP BY COUNTRY
+	WITH ROLLUP
+HAVING TOTAL_REVENUE > 100
+	AND COUNT(R.RENTAL_ID) > 30;
+
+/*
+	AN ORDER BY CLAUSE CANNOT BE USED WITH ROLLUP
+
+	HOWEVER, AN ASC OR DESC KEYWORD CAN BE USED IN THE GROUP BY 
+	STATEMENT TO ORDER RESULTS
+
+*/
+
+SELECT 	
+		COUNTRY,
+		COUNT(R.RENTAL_ID) AS TOTAL_RENTALS,
+		SUM(AMOUNT) AS TOTAL_REVENUE
+FROM jgough2_sakila.rental R
+	JOIN jgough2_sakila.customer_list C 
+		ON R.customer_id = C.ID
+	JOIN jgough2_sakila.payment P 
+		ON R.rental_id = P.rental_id
+WHERE RENTAL_DATE BETWEEN '2005-01-01' AND '2005-05-30'
+GROUP BY COUNTRY DESC
+	WITH ROLLUP
+HAVING TOTAL_REVENUE > 100
+	AND COUNT(R.RENTAL_ID) > 30;
+
+-- ============================================================================
+-- ============================================================================
+-- ============================================================================
+-- ============================================================================
+
+-- SUBQUERIES
+
+/*
+
+	SUBQUERIES CAN BE USED IN FOUR PLACES IN A SELECT STATEMENT
+
+	1. IN A WHERE CLAUSE
+	2. IN A HAVING CLAUSE
+	3. IN A FROM CLAUSE
+	4. IN A SELECT CLAUSE
+
+*/
+
+-- FINDS THE AVERAGE AMOUNT
+
+SELECT AVG(AMOUNT)
+FROM jgough2_sakila.payment;
+
+-- RETURNS EVERYTHING GREATER THAN OR EQUAL TO 
+-- THE AVERAGE AMOUNT.
+
+SELECT 	payment_id,
+		AMOUNT
+FROM jgough2_sakila.payment
+WHERE AMOUNT >= (SELECT AVG(AMOUNT)
+				 FROM jgough2_sakila.payment)
+ORDER BY AMOUNT DESC; 
+
+-- INNER JOIN VS. SUBQUERY
+
+/* 	
+	SUBQUERIES ALLOW YOU TO PASS AN AGGREGATE VALUE TO THE 
+	MAIN QUERY.
+
+	CAN BE CREATED TO USE AD HOC RELATIONSHIPS
+
+	CAN REDUCE LONG QUERIES
+*/
+
+SELECT * -- 52 ROWS RETURNED
+FROM jgough2_sakila.payment P
+	JOIN jgough2_sakila.customer_list C 
+		ON P.customer_id = C.id
+WHERE C.COUNTRY = 'Angola';
+
+
+SELECT * -- 52 ROWS RETURNED 
+FROM jgough2_sakila.payment P
+WHERE P.customer_id IN (SELECT ID -- AD HOC RELATIONSHIP
+						FROM jgough2_sakila.customer_list
+						WHERE COUNTRY = 'Angola');
+
+-- IN OPERATOR
+
+
+SELECT 'Non-Angolan Payments' AS METRIC, COUNT(*)
+FROM jgough2_sakila.payment P
+WHERE P.customer_id NOT IN (SELECT ID						-- NOT IN IS A COSTLIER FUNCTION AS 
+						FROM jgough2_sakila.customer_list	-- IT REQUIRES THE DBMS TO TRAVERSE
+						WHERE COUNTRY = 'Angola')			-- THE ENTIRE TABLE.
+UNION ALL
+SELECT 'Angolan Payments' AS METRIC, COUNT(*)
+FROM jgough2_sakila.payment P
+WHERE P.customer_id IN (SELECT ID
+						FROM jgough2_sakila.customer_list
+						WHERE COUNTRY = 'Angola')
+UNION ALL
+SELECT 'Total Payments' AS METRIC, COUNT(*)
+FROM jgough2_sakila.payment P;
+
+-- ALL KEYWORD
+-- GOOD FOR CREATING DYNAMIC WHERE CLAUSES (I.E. IF THE UNDERLYING VALUE IS PRONE TO CHANGE
+-- IT SAVES YOU FROM HAVING TO EDIT YOUR SCRIPT EACH TIME IT DOES.)
+
+
+SELECT 	MAX(INVOICE_TOTAL) AS HIGHEST_TOTAL,
+		MIN(INVOICE_TOTAL) AS LOWEST_TOTAL
+FROM jgough2_ap.invoices
+WHERE VENDOR_ID = 34;
+
+
+
+SELECT VENDOR_NAME, 
+		INVOICE_NUMBER,
+		INVOICE_TOTAL
+FROM jgough2_ap.invoices I 
+	JOIN jgough2_ap.vendors V 
+		ON I.vendor_id = V.vendor_id
+WHERE INVOICE_TOTAL > ALL 		-- WHERE INVOICE TOTAL IS GREATER THAN 
+	(SELECT invoice_total		-- THE HIGHEST INVOICE TOTAL FOR VENDOR
+	 FROM jgough2_ap.invoices 	-- 34. > 1083.5
+	 WHERE vendor_id = 34)
+ORDER BY VENDOR_NAME;
+
+
+SELECT VENDOR_NAME, 
+		INVOICE_NUMBER,
+		INVOICE_TOTAL
+FROM jgough2_ap.invoices I 
+	JOIN jgough2_ap.vendors V 
+		ON I.vendor_id = V.vendor_id
+WHERE INVOICE_TOTAL < ALL 		-- WHERE INVOICE TOTAL IS LESS THAN 
+	(SELECT invoice_total		-- THE LOWEST INVOICE TOTAL FOR VENDOR
+	 FROM jgough2_ap.invoices 	-- 34. < 116.5
+	 WHERE vendor_id = 34)
+ORDER BY VENDOR_NAME;
+
+
+-- ANY/SOME KEYWORDS
+
+-- RETURN ALL INVOICES SMALLER THAN THE LARGEST
+-- INVOICE FOR VENDOR 115. < 25
+
+SELECT 	MAX(INVOICE_TOTAL) AS HIGHEST_TOTAL,
+		MIN(INVOICE_TOTAL) AS LOWEST_TOTAL
+FROM jgough2_ap.invoices
+WHERE VENDOR_ID = 115;
+
+SELECT 	vendor_name,
+		invoice_number,
+		invoice_total
+FROM jgough2_ap.vendors V
+	JOIN jgough2_ap.invoices I 
+		ON V.vendor_id = I.vendor_id
+WHERE invoice_total < ANY 
+	(SELECT INVOICE_TOTAL
+	 FROM jgough2_ap.invoices
+	 WHERE VENDOR_ID = 115);
+
+
+-- CORRELATED SUBQUERY 
+-- THIS TYPE OF SUBQUERY ACTS AS A LOOP AND IS EXECUTED ONCE 
+-- FOR EACH ROW IN THE MAIN-QUERY. 
+
+SELECT 	CUSTOMER_ID,
+		NAME,
+		AMOUNT,
+		PAYMENT_DATE
+FROM jgough2_sakila.payment A
+	JOIN jgough2_sakila.customer_list L 
+		ON A.customer_id = L.ID 
+WHERE A.AMOUNT >
+	(SELECT AVG(AMOUNT) 
+	 FROM jgough2_sakila.payment B
+	 WHERE A.CUSTOMER_ID = B.CUSTOMER_ID) 	-- RETURNS EACH AMOUNT THAT IS HIGHER THAN THAT CUSTOMER'S 
+ORDER BY CUSTOMER_ID, A.AMOUNT;				-- AVERAGE AMOUNT. 
+
+
+		-- CHECK -- AVERAGE PAYMENT FOR CUSTOMER_ID 1 IS $3.708750
+
+
+SELECT 	CUSTOMER_ID,
+		NAME,
+		AVG(AMOUNT) AS AVERAGE_PAYMENT
+FROM jgough2_sakila.payment A
+	JOIN jgough2_sakila.customer_list L 
+		ON A.customer_id = L.ID 
+WHERE CUSTOMER_ID = 1
+GROUP BY CUSTOMER_ID, NAME;
+
+-- SUBQUERY IN A SELECT CLAUSE
+-- RETURNS THE HIGHEST PAYMENT AMOUNT FOR EACH CUSTOMER
+
+SELECT 	ID, 
+		NAME,
+		(SELECT MAX(AMOUNT) 
+		 FROM jgough2_sakila.payment
+		 WHERE customer_id =  L.ID) AS HIGHEST_PAYMENT
+FROM jgough2_sakila.customer_list L;
+
+-- SUBQUERY IN A FROM CLAUSE 
+-- RETURNS THE LARGEST PAYMENT TOTAL FOR THE TOP 
+-- CUSTOMER IN EACH COUNTRY.
+
+SELECT 	COUNTRY, 
+		MAX(PAYMENT_TOTAL)
+FROM 
+	(SELECT L.COUNTRY,
+			L.NAME,
+			SUM(P.AMOUNT) AS PAYMENT_TOTAL
+	 FROM jgough2_sakila.customer_list L 
+			JOIN jgough2_sakila.payment P 
+				ON L.ID = P.customer_id
+	 GROUP BY L.COUNTRY, NAME) T 
+GROUP BY COUNTRY;
+
+-- COMPLEX QUERIES WITH SUBQUERIES
+-- RETURNS THE CUSTOMER FROM EACH COUNTRY 
+-- WITH THE HIGHEST PAYMENT TOTAL.
+
+SELECT  T1.COUNTRY,
+		CUSTOMER_NAME,
+		T1.PAYMENT_TOTAL
+FROM
+-- PAYMENT TOTALS BY CUSTOMER
+	(SELECT 	L.country,
+				L.NAME AS CUSTOMER_NAME,
+				SUM(AMOUNT) AS PAYMENT_TOTAL
+	FROM jgough2_sakila.customer_list L
+		JOIN jgough2_sakila.payment P 
+			ON L.ID = P.customer_id
+	GROUP BY L.COUNTRY, L.NAME) T1
+		JOIN 
+			-- TOP PAYMENT TOTALS BY COUNTRY
+			(SELECT COUNTRY, 
+					MAX(PAYMENT_TOTAL) AS PAYMENT_TOTAL
+			 FROM
+			-- PAYMENT TOTALS BY CUSTOMER
+				(SELECT 	L.country,
+							L.NAME AS CUSTOMER_NAME,
+							SUM(AMOUNT) AS PAYMENT_TOTAL
+				 FROM jgough2_sakila.customer_list L
+					JOIN jgough2_sakila.payment P 
+						ON L.ID = P.customer_id
+				 GROUP BY L.COUNTRY, L.NAME) T2
+			 GROUP BY COUNTRY) T3
+		ON T1.COUNTRY = T3.COUNTRY
+			AND T1.PAYMENT_TOTAL = T3.PAYMENT_TOTAL
+ORDER BY COUNTRY;
+
+-- ============================================================================
+-- ============================================================================
+-- ============================================================================
+-- ============================================================================
+
+-- CASE STATEMENTS
+-- DERIVED VARIABLES & DATASET BUILDER
+
+Select 	EmployeeID,
+		BirthDate,
+        round(datediff(now(),BirthDate)/365) as age,
+        
+        CASE
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 20 AND 29 THEN 20
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 30 AND 39 THEN 30
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 40 AND 49 THEN 40
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 50 AND 59 THEN 50
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 60 AND 69 THEN 60
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 70 AND 79 THEN 70
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 80 AND 89 THEN 80
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 90 AND 99 THEN 90
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 100 AND 109 THEN 100
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 110 AND 119 THEN 110
+        ELSE NULL end as age_category,
+        
+        Hiredate,
+        round(datediff(now(),Hiredate)/365) as years_employed,
+        
+        case 
+        when round(datediff(now(),Hiredate)/365) >= 25 then 1
+        else 0 end as 'twenty_five_plus',
+        
+		case 
+        when TitleOfCourtesy = 'Dr.' then null
+        when TitleOfCourtesy in ('Ms.','Mrs.') then 'F'
+        else 'M' end as Gender,
+        
+        case 
+        when Country = 'USA' then 1 
+        else 0 end as US_Employee
+        
+from jgough2_NorthWind.Employees;
+
+Select 	EmployeeID,
+        CASE
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 20 AND 29 THEN 20
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 30 AND 39 THEN 30
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 40 AND 49 THEN 40
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 50 AND 59 THEN 50
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 60 AND 69 THEN 60
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 70 AND 79 THEN 70
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 80 AND 89 THEN 80
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 90 AND 99 THEN 90
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 100 AND 109 THEN 100
+        WHEN round(datediff(now(),BirthDate)/365) BETWEEN 110 AND 119 THEN 110
+        ELSE NULL end as V_1,
+        case 
+        when round(datediff(now(),Hiredate)/365) >= 25 then 1
+        else 0 end as V_2,
+		case 
+        when TitleOfCourtesy = 'Dr.' then null
+        when TitleOfCourtesy in ('Ms.','Mrs.') then 'F'
+        else 'M' end as V_3,
+        case 
+        when Country = 'USA' then 1 
+        else 0 end as V_4
+from jgough2_NorthWind.Employees;
+
+/* 
+
+	FINAL PROJECT TIPS
+    
+    Your final project dataset can be built with a
+    single select statement using left joins. 
+    
+    You will want to consider using case statements
+    to generate derived variables.
+
+*/
+
+
+
+
+

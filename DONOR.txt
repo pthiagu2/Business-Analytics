@@ -1,0 +1,814 @@
+Age,City,Amount,Gender,STATE,Country,TRANSACTION_ID,age_category
+69,,NULL,Male,"No State",USA,NULL,60
+63,"231 Roc             ",300,Female,"No State",TW,990,60
+74,Addison,25,Male,Illinois,USA,1102,70
+84,Alameda,NULL,Female,"New Mexico",USA,NULL,80
+57,Albion,NULL,Male,Illinois,USA,NULL,50
+40,Albuquerque,NULL,Female,"New Mexico",USA,NULL,40
+51,"Alexandria          ",NULL,Female,Virginia,USA,NULL,50
+60,Algonquin,NULL,Female,Illinois,USA,NULL,60
+47,Altamont,25,Female,Illinois,USA,5212,40
+63,Alton,25,Female,Illinois,USA,3037,60
+64,Ames,NULL,Female,Iowa,USA,NULL,60
+60,Amherst,25,Female,Ohio,USA,1759,60
+62,Andover,NULL,Female,Massachusetts,USA,NULL,60
+65,"Angel Fire",25,Male,"New Mexico",USA,6119,60
+69,"Ann Arbor",100,Female,Michigan,USA,1755,60
+72,Anna,NULL,Female,Illinois,USA,NULL,70
+66,Annandale,50,Male,Virginia,USA,7462,60
+65,Annawan,20,Female,Illinois,USA,4834,60
+0,Antigo,25,Female,Wisconsin,USA,4595,NULL
+53,Apex,25,Male,"North Carolina",USA,3311,50
+68,APO,NULL,Male,"Armed Forces Europe/Canada/Middle East/Africa",USA,NULL,60
+68,Arcola,NULL,Female,Illinois,USA,NULL,60
+64,Arlington,NULL,Female,Virginia,USA,NULL,60
+24,"Arlington Heights",NULL,Female,Illinois,USA,NULL,20
+24,"Arlington Hts",NULL,Female,Illinois,USA,NULL,20
+65,Arvada,NULL,Male,Colorado,USA,NULL,60
+50,Asheville,NULL,Female,"North Carolina",USA,NULL,50
+81,Ashland,NULL,Male,Missouri,USA,NULL,80
+48,Ashton,NULL,Female,Maryland,USA,NULL,40
+65,Aspen,NULL,Female,Colorado,USA,NULL,60
+0,Athens,NULL,Female,Georgia,USA,NULL,NULL
+61,Atlanta,NULL,Female,Georgia,USA,NULL,60
+52,Auburn,NULL,Female,Illinois,USA,NULL,50
+74,Aurora,NULL,Female,Colorado,USA,NULL,70
+84,Austin,NULL,Male,Texas,USA,NULL,80
+66,Avondale,NULL,Female,Arizona,USA,NULL,60
+60,Baileyville,NULL,Female,Illinois,USA,NULL,60
+55,"Bainbridge Island",NULL,Female,Washington,USA,NULL,50
+63,Bakersville,30,Female,"North Carolina",USA,284,60
+62,Ballwin,50,Female,Missouri,USA,10047,60
+71,Baltimore,NULL,Female,Maryland,USA,NULL,70
+66,Barrington,NULL,Female,Illinois,USA,NULL,60
+49,Bartlett,5,Female,Illinois,USA,218,40
+69,Bartonville,NULL,Female,Illinois,USA,NULL,60
+42,Bastrop,NULL,Female,Texas,USA,NULL,40
+62,Batavia,NULL,Female,Illinois,USA,NULL,60
+24,Bath,NULL,Female,Michigan,USA,NULL,20
+77,"Baton Rouge",25,Female,Louisiana,USA,1505,70
+66,Bayside,NULL,Female,"New York",USA,NULL,60
+83,Beaverville,50,Male,Illinois,USA,74,80
+68,Bellaire,25,Male,Texas,USA,1576,60
+66,Belleville,NULL,Male,Illinois,USA,NULL,60
+73,Bellingham,10,Male,Washington,USA,6752,70
+49,Beloit,NULL,Female,Wisconsin,USA,NULL,40
+73,Belvidere,25,Female,Illinois,USA,98,70
+75,Bend,NULL,Female,Oregon,USA,NULL,70
+68,Benicia,25,Male,California,USA,515,60
+0,Bensenville,NULL,Female,Illinois,USA,NULL,NULL
+0,Berkeley,25,Male,California,USA,1359,NULL
+59,"Berks, Windsor Uk",25,Female,"No State",GB,141,50
+69,Berryville,50,Female,Virginia,USA,529,60
+58,Berwyn,NULL,Female,Illinois,USA,NULL,50
+62,Bethalto,NULL,Male,Illinois,USA,NULL,60
+57,Bethesda,NULL,Female,Maryland,USA,NULL,50
+62,Bethlehem,50,Male,Pennsylvania,USA,1295,60
+56,Bettendorf,NULL,Female,Iowa,USA,NULL,50
+61,Bismarck,25,Male,"North Dakota",USA,1028,60
+56,Blacksburg,NULL,Female,Virginia,USA,NULL,50
+59,Blandinsville,25,Female,Illinois,USA,535,50
+88,Bloomfield,50,Female,"New Jersey",USA,4612,80
+46,Bloomingdale,NULL,Female,Illinois,USA,NULL,40
+60,Bloomington,NULL,Female,Illinois,USA,NULL,60
+74,"Boca Raton",NULL,Female,Florida,USA,NULL,70
+72,Boerne,NULL,Female,Texas,USA,NULL,70
+41,Bolingbrook,NULL,Female,Illinois,USA,NULL,40
+50,Bonfield,25,Female,Illinois,USA,3307,50
+87,Boston,25,Female,Massachusetts,USA,967,80
+60,Boulder,NULL,Female,Colorado,USA,NULL,60
+59,Bourbonnais,25,Female,Illinois,USA,7940,50
+60,Boyds,290,Female,Maryland,USA,2602,60
+72,"Boynton Beach",20,Female,Florida,USA,4147,70
+58,Bradenton,NULL,Female,Florida,USA,NULL,50
+70,Branchville,20,Male,"New Jersey",USA,1193,70
+57,Brandon,NULL,Female,Mississippi,USA,NULL,50
+58,Branford,100,Female,Connecticut,USA,1423,50
+57,Bremerton,NULL,Female,Washington,USA,NULL,50
+45,Brentwood,150,Female,Tennessee,USA,2263,40
+80,Brighton,100,Female,Michigan,USA,4753,80
+70,Brimfield,25,Male,Illinois,USA,45,70
+0,Broadview,NULL,Male,Illinois,USA,NULL,NULL
+68,Brookfield,NULL,Female,Illinois,USA,NULL,60
+24,Brooklyn,NULL,Female,Connecticut,USA,NULL,20
+63,Broomfield,300,Female,Colorado,USA,3870,60
+44,Browning,NULL,Female,Illinois,USA,NULL,40
+73,Buchanan,NULL,Female,Michigan,USA,NULL,70
+23,"Buffalo Grove",NULL,Female,Illinois,USA,NULL,20
+69,"Bunker Hill",NULL,Female,Illinois,USA,NULL,60
+60,Burbank,NULL,Female,California,USA,NULL,60
+52,Burke,NULL,Male,Virginia,USA,NULL,50
+56,"Burr Ridge",NULL,Female,Illinois,USA,NULL,50
+49,Byron,NULL,Female,Illinois,USA,NULL,40
+56,Caledonia,50,Female,Illinois,USA,6170,50
+79,"Calumet City",NULL,Female,Illinois,USA,NULL,70
+66,"Camano Island",NULL,Male,Washington,USA,NULL,60
+86,Camarillo,25,Female,California,USA,1330,80
+58,Cambridge,100,Female,Massachusetts,USA,4916,50
+55,Camden,NULL,Female,Arkansas,USA,NULL,50
+56,"Cameron             ",10,Male,Illinois,USA,8417,50
+67,Canton,NULL,Male,Illinois,USA,NULL,60
+52,"Cape Coral",NULL,Female,Florida,USA,NULL,50
+82,"Cape Elizabeth",NULL,Male,Maine,USA,NULL,80
+28,Carbondale,NULL,Female,Illinois,USA,NULL,20
+62,Carlinville,50,Male,Illinois,USA,682,60
+41,Carlock,NULL,Female,Illinois,USA,NULL,40
+60,Carlsbad,NULL,Female,California,USA,NULL,60
+75,Carmel,25,Female,Indiana,USA,201,70
+65,Carmi,NULL,Male,Illinois,USA,NULL,60
+25,"Carol Stream",NULL,Female,Illinois,USA,NULL,20
+46,Carterville,NULL,Female,Illinois,USA,NULL,40
+48,Carthage,25,Female,Tennessee,USA,6097,40
+68,"Castle Rock",60,Female,Colorado,USA,3023,60
+75,"Castro Valley",100,Female,California,USA,164,70
+69,Catlin,100,Female,Illinois,USA,8852,60
+62,"Cave Creek",NULL,Female,Arizona,USA,NULL,60
+61,"Cedar Crest",20,Male,"New Mexico",USA,1247,60
+39,"Cedar Falls",25,Female,Iowa,USA,782,30
+57,Centennial,NULL,Female,Colorado,USA,NULL,50
+22,Champaign,20,Female,Illinois,USA,3489,20
+54,Chana,25,Female,Illinois,USA,1481,50
+74,Chandler,10,Female,Arizona,USA,1645,70
+45,Channahon,NULL,Female,Illinois,USA,NULL,40
+65,"Chapel Hill",9864.11,Female,"North Carolina",USA,2295,60
+30,Chapin,NULL,Female,Illinois,USA,NULL,30
+33,Charleston,NULL,Female,Illinois,USA,NULL,30
+46,Charlotte,150,Female,"North Carolina",USA,5472,40
+77,Charlottesville,20,Female,Virginia,USA,1504,70
+65,Chatham,NULL,Male,Illinois,USA,NULL,60
+52,Chattanooga,NULL,Female,Tennessee,USA,NULL,50
+45,"Cherry Valley",NULL,Female,Illinois,USA,NULL,40
+52,"Chia-Yi, Taiwan",100,Male,"No State",TW,2957,50
+62,Chicago,NULL,Male,Illinois,USA,NULL,60
+36,"Chicago Heights",50,Female,Illinois,USA,580,30
+66,Chillicothe,15,Female,Illinois,USA,846,60
+46,"China Grove",NULL,Female,"North Carolina",USA,NULL,40
+72,Cincinnati,200,Male,Ohio,USA,474,70
+45,Claremont,450,Female,California,USA,7371,40
+55,Clementon,NULL,Female,"New Jersey",USA,NULL,50
+53,Clemson,NULL,Female,"South Carolina",USA,NULL,50
+67,Clermont,NULL,Female,Florida,USA,NULL,60
+68,Coatesville,100,Female,Pennsylvania,USA,2690,60
+59,"Coeur D Alene",50,Female,Idaho,USA,354,50
+0,Colebrook,15,Female,"New Hampshire",USA,4535,NULL
+61,Collegeville,50,Female,Pennsylvania,USA,839,60
+52,Collierville,NULL,Female,Tennessee,USA,NULL,50
+62,Collinsville,NULL,Male,Illinois,USA,NULL,60
+60,Colona,NULL,Female,Illinois,USA,NULL,60
+60,"Colorado Springs",NULL,Female,Colorado,USA,NULL,60
+81,Columbia,NULL,Male,Missouri,USA,NULL,80
+69,Columbus,100,Male,Ohio,USA,905,60
+65,Congerville,500,Male,Illinois,USA,2434,60
+46,Coppell,NULL,Female,Texas,USA,NULL,40
+54,Corinth,NULL,Female,Texas,USA,NULL,50
+79,Cornville,NULL,Female,Arizona,USA,NULL,70
+74,Corona,20,Female,California,USA,2245,70
+96,"Corona Del Mar",25,Female,California,USA,1348,90
+76,Cottonwood,10,Female,Arizona,USA,7937,70
+45,"Cove City",NULL,Male,"North Carolina",USA,NULL,40
+62,"Creal Springs",NULL,Female,Illinois,USA,NULL,60
+63,"Creve Coeur",NULL,Female,Missouri,USA,NULL,60
+45,"Crown Point",25,Female,Indiana,USA,2212,40
+66,"Crystal Lake",NULL,Male,Illinois,USA,NULL,60
+57,Cuba,NULL,Female,Illinois,USA,NULL,50
+46,Cypress,NULL,Female,Texas,USA,NULL,40
+57,Dakota,50,Female,Illinois,USA,7824,50
+63,Dallas,NULL,Female,Texas,USA,NULL,60
+51,Danvers,NULL,Female,Illinois,USA,NULL,50
+67,Danville,NULL,Female,Illinois,USA,NULL,60
+86,Daphne,100,Female,Alabama,USA,1306,80
+55,Darien,25,Female,Illinois,USA,5601,50
+52,Davenport,NULL,Female,Iowa,USA,NULL,50
+43,Davidson,NULL,Female,"North Carolina",USA,NULL,40
+53,Davis,NULL,Female,California,USA,NULL,50
+63,Dawson,NULL,Female,Illinois,USA,NULL,60
+74,"Daytona Beach",NULL,Male,Florida,USA,NULL,70
+48,Dearborn,NULL,Female,Michigan,USA,NULL,40
+65,Decatur,NULL,Female,Georgia,USA,NULL,60
+58,Deerfield,NULL,Female,Illinois,USA,NULL,50
+71,Dekalb,NULL,Female,Illinois,USA,NULL,70
+52,"Del Mar",NULL,Female,California,USA,NULL,50
+62,Delavan,NULL,Female,Illinois,USA,NULL,60
+69,Denver,NULL,Female,Colorado,USA,NULL,60
+0,"Des Moines",10,Female,Iowa,USA,1244,NULL
+97,"Des Plaines",10,Female,Illinois,USA,8617,90
+59,Dexter,NULL,Female,Missouri,USA,NULL,50
+51,"Diamond Bar",NULL,Female,California,USA,NULL,50
+33,Divernon,10,Female,Illinois,USA,7475,30
+50,Dix,NULL,Female,Illinois,USA,NULL,50
+66,Dixon,NULL,Female,Illinois,USA,NULL,60
+57,Doraville,25,Female,Georgia,USA,516,50
+75,Dover,50,Female,Tennessee,USA,1435,70
+52,"Downers Grove",NULL,Female,Illinois,USA,NULL,50
+0,Downey,NULL,Female,California,USA,NULL,NULL
+52,Downs,25,Female,Illinois,USA,292,50
+54,Dublin,20,Female,Ohio,USA,3952,50
+79,Dubuque,NULL,Female,Iowa,USA,NULL,70
+68,Duluth,NULL,Male,Minnesota,USA,NULL,60
+56,Dunkirk,100,Female,"New York",USA,31,50
+50,Dunlap,NULL,Female,Illinois,USA,NULL,50
+72,Dunsmuir,NULL,Male,California,USA,NULL,70
+59,Durham,NULL,Female,"North Carolina",USA,NULL,50
+43,Dyer,NULL,Female,Indiana,USA,NULL,40
+71,Eagle,20,Male,Idaho,USA,1592,70
+66,"East Lansing",100,Male,Michigan,USA,1123,60
+30,"East Moline",NULL,Female,Illinois,USA,NULL,30
+63,"East Palo Alto",NULL,Female,California,USA,NULL,60
+69,"East Peoria",NULL,Female,Illinois,USA,NULL,60
+75,"East Syracuse",200,Female,"New York",USA,225,70
+64,Eastport,NULL,Female,Maine,USA,NULL,60
+60,"Eau Claire",NULL,Female,Wisconsin,USA,NULL,60
+53,Edelstein,NULL,Female,Illinois,USA,NULL,50
+63,Edina,300,Female,Minnesota,USA,9530,60
+64,Edwards,NULL,Female,Illinois,USA,NULL,60
+47,Edwardsville,NULL,Female,Illinois,USA,NULL,40
+36,Effingham,NULL,Female,Illinois,USA,NULL,30
+84,"El Cerrito",30,Male,California,USA,1405,80
+65,Elgin,10,Male,Illinois,USA,1328,60
+63,"Elk Grove Village",25,Female,Illinois,USA,9155,60
+64,"Ellicott City",250,Female,Maryland,USA,193,60
+63,"Elm Mott",NULL,Female,Texas,USA,NULL,60
+79,Elmhurst,NULL,Male,Illinois,USA,NULL,70
+24,Encino,NULL,Female,California,USA,NULL,20
+70,Enfield,15,Female,"New Hampshire",USA,317,70
+61,Englewood,200,Male,Colorado,USA,2986,60
+58,Erie,NULL,Female,Pennsylvania,USA,NULL,50
+60,Eugene,NULL,Female,Oregon,USA,NULL,60
+47,Eureka,NULL,Female,Illinois,USA,NULL,40
+56,Evans,NULL,Female,Colorado,USA,NULL,50
+59,Evanston,NULL,Female,Illinois,USA,NULL,50
+41,Evansville,100,Female,Indiana,USA,8730,40
+0,"Excelsior Springs",NULL,Male,Missouri,USA,NULL,NULL
+65,Fairbanks,NULL,Female,Alaska,USA,NULL,60
+49,Fairbury,50,Female,Illinois,USA,3153,40
+57,Fairfax,25,Female,Virginia,USA,396,50
+64,"Farmer City",NULL,Female,Illinois,USA,NULL,60
+59,Fayetteville,NULL,Female,Arkansas,USA,NULL,50
+0,"Federal Way",25,Male,Washington,USA,520,NULL
+56,Fillmore,NULL,Female,California,USA,NULL,50
+55,Fircrest,NULL,Male,Washington,USA,NULL,50
+48,Fishers,NULL,Female,Indiana,USA,NULL,40
+57,Fitchburg,NULL,Female,Wisconsin,USA,NULL,50
+55,Fithian,1000,Female,Illinois,USA,4816,50
+55,Flagstaff,20,Female,Arizona,USA,490,50
+57,Fletcher,NULL,Female,"North Carolina",USA,NULL,50
+0,Flora,25,Male,Indiana,USA,7691,NULL
+65,Florence,25,Female,Montana,USA,1509,60
+0,Flossmoor,NULL,Female,Illinois,USA,NULL,NULL
+87,"Forest Grove",25,Female,Oregon,USA,1184,80
+57,"Forest Park",NULL,Female,Illinois,USA,NULL,50
+64,Forsyth,NULL,Female,Illinois,USA,NULL,60
+62,"Fort Atkinson",50,Female,Wisconsin,USA,2641,60
+60,"Fort Collins",NULL,Female,Colorado,USA,NULL,60
+51,"Fort Jones",NULL,Female,California,USA,NULL,50
+59,"Fort Mill",NULL,Female,"South Carolina",USA,NULL,50
+46,"Fort Myers",NULL,Female,Florida,USA,NULL,40
+76,"Fort Walton Beach",NULL,Female,Florida,USA,NULL,70
+53,"Fort Wayne",NULL,Female,Indiana,USA,NULL,50
+50,"Fort Worth",250,Female,Texas,USA,8952,50
+67,Frankfort,NULL,Male,Illinois,USA,NULL,60
+75,Frederick,25,Male,Maryland,USA,4256,70
+53,Fredericksburg,NULL,Female,Virginia,USA,NULL,50
+46,Freeburg,NULL,Female,Illinois,USA,NULL,40
+75,Freehold,25,Female,"New Jersey",USA,10347,70
+47,Freeport,NULL,Female,Illinois,USA,NULL,40
+82,Fremont,25,Female,California,USA,4409,80
+70,"Friday Harbor",NULL,Female,Washington,USA,NULL,70
+48,Frisco,NULL,Female,Texas,USA,NULL,40
+64,Gainesville,100,Male,Florida,USA,749,60
+68,Galesburg,50,Female,Illinois,USA,251,60
+47,"Gendros Swansea",NULL,Female,"No State",GB,NULL,40
+49,Geneseo,25,Female,Illinois,USA,197,40
+38,Geneva,NULL,Female,Illinois,USA,NULL,30
+60,Georgetown,10,Male,Illinois,USA,6635,60
+57,Germantown,NULL,Female,Tennessee,USA,NULL,50
+60,"Germantown Hills",NULL,Female,Illinois,USA,NULL,60
+68,Gettysburg,NULL,Male,Pennsylvania,USA,NULL,60
+50,"Gibson City",25,Female,Illinois,USA,335,50
+52,Gifford,10,Female,Illinois,USA,1853,50
+67,Gilman,NULL,Female,Illinois,USA,NULL,60
+50,Gilson,NULL,Female,Illinois,USA,NULL,50
+62,Glasford,100,Female,Illinois,USA,2611,60
+52,"Glen Allen",NULL,Female,Virginia,USA,NULL,50
+71,"Glen Ellyn",NULL,Female,Illinois,USA,NULL,70
+59,Glencoe,NULL,Female,Illinois,USA,NULL,50
+76,Glendale,NULL,Female,Arizona,USA,NULL,70
+54,Glenshaw,NULL,Female,Pennsylvania,USA,NULL,50
+74,Glenview,25,Female,Illinois,USA,660,70
+46,Glenwood,NULL,Female,Illinois,USA,NULL,40
+74,Goshen,NULL,Male,Indiana,USA,NULL,70
+47,Gothenburg,50,Female,Nebraska,USA,6186,40
+53,"Grand Junction",NULL,Female,Colorado,USA,NULL,50
+44,"Grand Rapids",100,Female,Michigan,USA,1515,40
+61,Granville,NULL,Female,Ohio,USA,NULL,60
+61,Greensboro,NULL,Male,"North Carolina",USA,NULL,60
+46,Greenup,25,Female,Illinois,USA,9340,40
+64,Greenville,25,Female,"South Carolina",USA,1938,60
+59,Groveland,NULL,Female,Illinois,USA,NULL,50
+67,"Gulf Shores",50,Female,Alabama,USA,704,60
+59,Gulfport,25,Female,Mississippi,USA,2172,50
+52,Gurnee,NULL,Female,Illinois,USA,NULL,50
+44,Hainesville,NULL,Female,Illinois,USA,NULL,40
+50,Hamel,NULL,Female,Minnesota,USA,NULL,50
+55,"Hanna City",NULL,Female,Illinois,USA,NULL,50
+47,Hannibal,NULL,Female,Missouri,USA,NULL,40
+75,Harrisburg,25,Male,"North Carolina",USA,216,70
+65,Harrisville,100,Female,Pennsylvania,USA,632,60
+60,Harrogate,NULL,Female,Tennessee,USA,NULL,60
+67,Hartford,50,Male,Connecticut,USA,93,60
+48,Harvel,10,Female,Illinois,USA,5428,40
+83,Hattiesburg,NULL,Male,Mississippi,USA,NULL,80
+49,"Hawthorn Woods      ",NULL,Female,Illinois,USA,NULL,40
+45,Hayward,100,Female,California,USA,1590,40
+57,Helotes,NULL,Female,Texas,USA,NULL,50
+68,Henderson,NULL,Male,Nevada,USA,NULL,60
+39,Hendersonville,75,Female,Tennessee,USA,4547,30
+57,Hereford,25,Female,Arizona,USA,6550,50
+71,"Herrick             ",10,Female,Illinois,USA,2192,70
+68,Herrin,250,Male,Illinois,USA,416,60
+46,Heyworth,NULL,Male,Illinois,USA,NULL,40
+35,Hibbing,10,Female,Minnesota,USA,8922,30
+65,Hickory,NULL,Female,"North Carolina",USA,NULL,60
+59,Highland,11,Female,Illinois,USA,400,50
+63,"Highland Park",NULL,Female,Illinois,USA,NULL,60
+44,"Highlands Ranch",NULL,Female,Colorado,USA,NULL,40
+73,Hilliard,25,Female,Ohio,USA,4199,70
+57,Hillsboro,NULL,Female,Missouri,USA,NULL,50
+30,Hillside,10,Female,Illinois,USA,10983,30
+70,"Hilton Head Island",25,Female,"South Carolina",USA,329,70
+83,"Hoffman Estates",NULL,Female,Illinois,USA,NULL,80
+63,"Holiday Hills",NULL,Female,Illinois,USA,NULL,60
+54,"Holly Springs",25,Male,"North Carolina",USA,9390,50
+53,Homer,25,Female,Illinois,USA,1493,50
+42,Homewood,30,Female,Illinois,USA,636,40
+0,Honolulu,50,Male,Hawaii,USA,4506,NULL
+49,Hoopeston,NULL,Female,Illinois,USA,NULL,40
+62,Hortonville,NULL,Male,Wisconsin,USA,NULL,60
+67,Houston,NULL,Female,Texas,USA,NULL,60
+61,Howell,20,Female,Michigan,USA,5777,60
+63,Hudson,NULL,Male,Illinois,USA,NULL,60
+60,Hudsonville,NULL,Female,Michigan,USA,NULL,60
+62,Humboldt,25,Female,Illinois,USA,4150,60
+37,Hunnewell,NULL,Female,Missouri,USA,NULL,30
+52,Huntersville,NULL,Female,"North Carolina",USA,NULL,50
+0,"Huntington Beach",NULL,Female,California,USA,NULL,NULL
+61,Huntingtown,NULL,Female,Maryland,USA,NULL,60
+74,Huntley,200,Female,Illinois,USA,85,70
+59,Huntsville,NULL,Female,Alabama,USA,NULL,50
+46,Independence,NULL,Female,Missouri,USA,NULL,40
+61,Indialantic,NULL,Male,Florida,USA,NULL,60
+44,"Indian Trail",NULL,Female,"North Carolina",USA,NULL,40
+81,Indianapolis,NULL,Male,Indiana,USA,NULL,80
+58,"Iowa City",25,Female,Iowa,USA,607,50
+66,Irvine,NULL,Female,California,USA,NULL,60
+49,Issaquah,NULL,Female,Washington,USA,NULL,40
+83,Ithaca,NULL,Female,"New York",USA,NULL,80
+58,Jackson,NULL,Female,Tennessee,USA,NULL,50
+70,Jacksonville,NULL,Female,Florida,USA,NULL,70
+59,Jamestown,50,Female,"Rhode Island",USA,3206,50
+48,Jasper,NULL,Female,Indiana,USA,NULL,40
+81,"Jensen Beach",NULL,Male,Florida,USA,NULL,80
+54,"Jersey City",NULL,Female,"New Jersey",USA,NULL,50
+60,Johnstown,NULL,Female,Colorado,USA,NULL,60
+0,Joliet,100,Female,Illinois,USA,2092,NULL
+58,Kalispell,NULL,Female,Montana,USA,NULL,50
+66,Kamrar,100,Male,Iowa,USA,1484,60
+45,"Kangnam Ku, Seoul",NULL,Female,"No State",KR,NULL,40
+29,Kankakee,NULL,Female,Illinois,USA,NULL,20
+0,"Kansas City",NULL,Male,Missouri,USA,NULL,NULL
+55,Kenmore,20,Male,Washington,USA,5352,50
+61,Kenner,25,Male,Louisiana,USA,4396,60
+64,"Kennett Square",NULL,Male,Pennsylvania,USA,NULL,60
+59,Kenosha,NULL,Female,Wisconsin,USA,NULL,50
+46,Kernersville,NULL,Female,"North Carolina",USA,NULL,40
+48,"Kew Gardens",100,Male,"New York",USA,484,40
+55,Kirkland,5,Female,Washington,USA,7461,50
+46,Kissimmee,25,Female,Florida,USA,6525,40
+71,Knoxville,NULL,Female,Tennessee,USA,NULL,70
+59,"Korea 151           ",NULL,Female,"No State",KR,NULL,50
+65,Kuna,NULL,Female,Idaho,USA,NULL,60
+42,Kutztown,20,Female,Pennsylvania,USA,3299,40
+62,"La Grange",25,Female,Illinois,USA,4338,60
+47,"La Grange Park",NULL,Male,Illinois,USA,NULL,40
+61,Lafayette,NULL,Female,Louisiana,USA,NULL,60
+65,"Lake Forest",NULL,Female,Illinois,USA,NULL,60
+59,"Lake In the Hills",NULL,Female,Illinois,USA,NULL,50
+0,"Lake Oswego",NULL,Female,Oregon,USA,NULL,NULL
+0,"Lake Saint Louis",NULL,Male,Missouri,USA,NULL,NULL
+58,Lakeland,NULL,Female,Florida,USA,NULL,50
+46,Lakewood,NULL,Female,Colorado,USA,NULL,40
+63,Lansing,20,Female,Michigan,USA,1425,60
+49,"Las Vegas",NULL,Male,Nevada,USA,NULL,40
+76,Lawrence,500,Male,Kansas,USA,4,70
+47,"Le Roy",20,Female,Illinois,USA,5981,40
+42,Lebanon,NULL,Female,Maine,USA,NULL,40
+59,Lecanto,50,Female,Florida,USA,84,50
+0,"Lehigh Acres",NULL,Male,Florida,USA,NULL,NULL
+45,Lena,50,Female,Illinois,USA,9973,40
+30,Lexington,NULL,Female,Kentucky,USA,NULL,30
+46,"Liberty Twp",NULL,Female,Ohio,USA,NULL,40
+60,Libertyville,NULL,Female,Illinois,USA,NULL,60
+38,Lillington,500,Female,"North Carolina",USA,800,30
+48,Lincoln,NULL,Female,Illinois,USA,NULL,40
+57,Lincolnshire,NULL,Female,Illinois,USA,NULL,50
+58,Lindale,NULL,Female,Texas,USA,NULL,50
+49,Lindenhurst,NULL,Female,Illinois,USA,NULL,40
+71,"Little River",5,Female,California,USA,1878,70
+66,Littleton,NULL,Female,Colorado,USA,NULL,60
+61,Livermore,15,Female,California,USA,4778,60
+74,Livingston,40,Male,Texas,USA,2980,70
+43,"Lock Haven",NULL,Female,Pennsylvania,USA,NULL,40
+51,Lodi,NULL,Female,Wisconsin,USA,NULL,50
+47,Lombard,NULL,Female,Illinois,USA,NULL,40
+48,London,NULL,Female,"No State",GB,NULL,40
+79,"Long Beach",NULL,Female,California,USA,NULL,70
+62,Longmont,NULL,Male,Colorado,USA,NULL,60
+87,Longview,25,Female,Texas,USA,1815,80
+62,"Los Alamos",NULL,Female,"New Mexico",USA,NULL,60
+78,"Los Angeles",100,Female,California,USA,1651,70
+55,Louisville,25,Female,Kentucky,USA,1572,50
+77,Loveland,100,Female,Colorado,USA,343,70
+46,"Loves Park",20,Female,Illinois,USA,291,40
+40,Lovington,NULL,Male,Illinois,USA,NULL,40
+70,Lowell,25,Male,Indiana,USA,38,70
+54,Lunenburg,NULL,Male,Massachusetts,USA,NULL,50
+59,Lyman,150,Male,"South Carolina",USA,582,50
+54,Lynwood,20,Male,Illinois,USA,1292,50
+43,Mableton,50,Female,Georgia,USA,1588,40
+70,"Machesney Park",NULL,Female,Illinois,USA,NULL,70
+0,Machias,NULL,Female,Maine,USA,NULL,NULL
+52,Mackinaw,25,Female,Illinois,USA,9036,50
+61,Macomb,NULL,Male,Illinois,USA,NULL,60
+73,Macon,25,Female,Georgia,USA,73,70
+65,Madison,NULL,Female,Wisconsin,USA,NULL,60
+26,Mahomet,NULL,Female,Illinois,USA,NULL,20
+53,Mahwah,20,Female,"New Jersey",USA,6266,50
+72,Manchaca,NULL,Female,Texas,USA,NULL,70
+74,Manchester,30,Male,Iowa,USA,1605,70
+65,Mansfield,100,Female,Illinois,USA,1679,60
+96,Manteno,25,Male,Illinois,USA,1261,90
+49,Mapleton,NULL,Female,Illinois,USA,NULL,40
+49,Marietta,NULL,Male,Georgia,USA,NULL,40
+64,Marion,NULL,Female,Illinois,USA,NULL,60
+51,Maroa,25,Female,Illinois,USA,467,50
+69,Marshall,50,Female,Illinois,USA,430,60
+57,Maryville,NULL,Female,Tennessee,USA,NULL,50
+74,Mason,100,Female,Illinois,USA,589,70
+48,Mattoon,NULL,Female,Illinois,USA,NULL,40
+38,Maywood,300,Female,Illinois,USA,10935,30
+48,"Mc Farland",NULL,Female,Wisconsin,USA,NULL,40
+64,McHenry,10,Male,Illinois,USA,265,60
+74,Media,NULL,Female,Pennsylvania,USA,NULL,70
+51,Medinah,NULL,Female,Illinois,USA,NULL,50
+78,Melrose,25,Male,"New York",USA,252,70
+53,Memphis,NULL,Female,Tennessee,USA,NULL,50
+54,Mendota,NULL,Female,Illinois,USA,NULL,50
+0,"Mendota Heights",20,Female,Minnesota,USA,5433,NULL
+57,"Menlo Park",NULL,Female,California,USA,NULL,50
+62,Mesa,NULL,Female,Arizona,USA,NULL,60
+75,Metairie,10,Female,Louisiana,USA,7769,70
+80,Metamora,25,Female,Illinois,USA,781,80
+62,Metropolis,20,Male,Illinois,USA,8154,60
+62,Miccosukee,25,Female,Florida,USA,4901,60
+80,"Michigan City",NULL,Female,Indiana,USA,NULL,80
+69,Middleton,25,Male,Wisconsin,USA,1042,60
+60,"Midland City",NULL,Female,Alabama,USA,NULL,60
+44,"Milford             ",25,Female,Illinois,USA,9923,40
+63,Milwaukee,NULL,Female,Wisconsin,USA,NULL,60
+60,Minneapolis,NULL,Female,Minnesota,USA,NULL,60
+63,Missoula,30,Female,Montana,USA,4173,60
+46,Mokena,NULL,Female,Illinois,USA,NULL,40
+68,Moline,NULL,Female,Illinois,USA,NULL,60
+48,Momence,NULL,Female,Illinois,USA,NULL,40
+58,Monmouth,15,Female,Illinois,USA,1714,50
+95,Monroe,NULL,Male,Wisconsin,USA,NULL,90
+44,Montgomery,NULL,Female,Illinois,USA,NULL,40
+60,Monticello,NULL,Female,Indiana,USA,NULL,60
+69,Morgantown,250,Female,Indiana,USA,277,60
+52,Morris,50,Female,Illinois,USA,4304,50
+29,Morton,100,Female,Illinois,USA,2327,20
+43,"Morton Grove",NULL,Female,Illinois,USA,NULL,40
+50,"Mount Auburn",50,Female,Illinois,USA,9366,50
+63,"Mount Olive",25,Female,"North Carolina",USA,336,60
+87,"Mount Pleasant",NULL,Male,"South Carolina",USA,NULL,80
+60,"Mount Prospect",NULL,Female,Illinois,USA,NULL,60
+62,"Mount Vernon",NULL,Male,Illinois,USA,NULL,60
+0,"Mountain Top",10,Female,Pennsylvania,USA,1106,NULL
+40,"Mt Zion",NULL,Female,Illinois,USA,NULL,40
+55,Mundelein,NULL,Male,Illinois,USA,NULL,50
+70,Mundingburra,NULL,Male,"No State",AU,NULL,70
+68,Murphysboro,NULL,Female,Illinois,USA,NULL,60
+67,"Murray              ",NULL,Male,Kentucky,USA,NULL,60
+72,Muskegon,50,Female,Michigan,USA,1539,70
+53,Naperville,NULL,Female,Illinois,USA,NULL,50
+75,Naples,100,Male,Florida,USA,3012,70
+73,Nashville,NULL,Female,Tennessee,USA,NULL,70
+55,Neffsville,NULL,Female,Pennsylvania,USA,NULL,50
+66,Nekoosa,NULL,Female,Wisconsin,USA,NULL,60
+60,Neoga,5,Female,Illinois,USA,4118,60
+49,"Neptune Beach",NULL,Female,Florida,USA,NULL,40
+61,"New Albany",50,Female,Indiana,USA,308,60
+71,"New Berlin",25,Female,Illinois,USA,1712,70
+49,"New Lenox",NULL,Female,Illinois,USA,NULL,40
+62,"New Providence",50,Female,"New Jersey",USA,5972,60
+57,"New Ulm",NULL,Female,Minnesota,USA,NULL,50
+53,Newark,25,Female,Delaware,USA,7736,50
+55,Newbern,20,Female,Tennessee,USA,326,50
+61,Newton,NULL,Female,Illinois,USA,NULL,60
+53,Nora,NULL,Female,Indiana,USA,NULL,50
+29,Normal,NULL,Female,Illinois,USA,NULL,20
+37,Norman,250,Female,Oklahoma,USA,10932,30
+61,"North Aurora",NULL,Female,Illinois,USA,NULL,60
+67,"North Chesterfield",25,Female,Virginia,USA,2930,60
+60,"North Port",20,Male,Florida,USA,5592,60
+53,"North Providence",100,Female,"Rhode Island",USA,382,50
+68,"North Terre Haute",NULL,Male,Indiana,USA,NULL,60
+64,Northbrook,NULL,Male,Illinois,USA,NULL,60
+57,Northfield,1000,Female,Illinois,USA,904,50
+73,Northville,NULL,Female,Michigan,USA,NULL,70
+64,Northwoods,75,Female,Illinois,USA,276,60
+64,"O Fallon",NULL,Female,Illinois,USA,NULL,60
+48,"Oak Creek",25,Female,Wisconsin,USA,5707,40
+66,"Oak Forest",25,Female,Illinois,USA,4178,60
+77,"Oak Lawn",NULL,Male,Illinois,USA,NULL,70
+24,"Oak Park",NULL,Female,Illinois,USA,NULL,20
+68,Oakland,50,Male,California,USA,2519,60
+72,"Oakland Park",NULL,Male,Florida,USA,NULL,70
+45,Oakton,25,Female,Virginia,USA,1369,40
+50,"Ocean Springs",NULL,Female,Mississippi,USA,NULL,50
+68,Odin,25,Male,Illinois,USA,1115,60
+45,Ogden,NULL,Female,Illinois,USA,NULL,40
+45,Oglesby,NULL,Female,Illinois,USA,NULL,40
+60,Olathe,NULL,Female,Kansas,USA,NULL,60
+44,Olney,NULL,Female,Illinois,USA,NULL,40
+47,Olympia,NULL,Female,Washington,USA,NULL,40
+68,Omaha,NULL,Female,Nebraska,USA,NULL,60
+44,Onarga,20,Female,Illinois,USA,6522,40
+49,Orange,NULL,Female,California,USA,NULL,40
+53,Orangevale,5,Female,California,USA,2200,50
+66,"Orland Park",NULL,Female,Illinois,USA,NULL,60
+58,Orlando,30,Female,Florida,USA,10144,50
+62,"Ormond Beach",25,Male,Florida,USA,240,60
+56,"Oro Valley",NULL,Male,Arizona,USA,NULL,50
+30,Oswego,NULL,Female,Illinois,USA,NULL,30
+59,Ottawa,50,Female,Illinois,USA,5205,50
+61,"Overland Park",20,Female,Kansas,USA,1417,60
+65,Oviedo,NULL,Female,Florida,USA,NULL,60
+72,"Owings Mills",25,Female,Maryland,USA,445,70
+56,Oxford,NULL,Male,Michigan,USA,NULL,50
+58,Pacifica,NULL,Female,California,USA,NULL,50
+51,Palatine,50,Female,Illinois,USA,2152,50
+73,"Palm Bay",25,Female,Florida,USA,5274,70
+55,"Palm Beach Gardens",NULL,Female,Florida,USA,NULL,50
+61,"Palm Coast",NULL,Male,Florida,USA,NULL,60
+0,"Palm Desert",NULL,Female,California,USA,NULL,NULL
+86,"Palm Harbor",25,Male,Florida,USA,641,80
+70,"Palo Alto",NULL,Female,California,USA,NULL,70
+45,"Palos Park",NULL,Female,Illinois,USA,NULL,40
+0,"Panorama City       ",NULL,Male,California,USA,NULL,NULL
+44,Paoli,NULL,Female,Pennsylvania,USA,NULL,40
+71,Paris,100,Female,Illinois,USA,4357,70
+47,"Park Forest",NULL,Female,Illinois,USA,NULL,40
+37,"Park Ridge",50,Female,Illinois,USA,1615,30
+50,Pawnee,NULL,Male,Illinois,USA,NULL,50
+24,Paxton,NULL,Female,Illinois,USA,NULL,20
+52,"Peachtree City",25,Female,Georgia,USA,6779,50
+69,Pekin,NULL,Female,Illinois,USA,NULL,60
+64,Pella,NULL,Female,Iowa,USA,NULL,60
+34,Pendleton,NULL,Female,Oregon,USA,NULL,30
+74,Penfield,25,Female,Illinois,USA,1079,70
+60,Peoria,NULL,Female,Illinois,USA,NULL,60
+51,Perrysburg,20,Female,Ohio,USA,3393,50
+60,Peru,NULL,Female,Illinois,USA,NULL,60
+64,Petersburg,NULL,Female,Illinois,USA,NULL,60
+52,Philadelphia,32,Female,Pennsylvania,USA,4712,50
+55,Philo,NULL,Female,Illinois,USA,NULL,50
+62,Phoenix,NULL,Female,Arizona,USA,NULL,60
+74,Pillager,NULL,Female,Minnesota,USA,NULL,70
+33,"Pingree Grove",20,Female,Illinois,USA,437,30
+65,Plainfield,NULL,Male,Illinois,USA,NULL,60
+46,Plano,25,Female,Texas,USA,3322,40
+48,"Pleasant Hill",NULL,Female,California,USA,NULL,40
+70,Pleasanton,100,Female,California,USA,86,70
+29,Plymouth,NULL,Female,Michigan,USA,NULL,20
+67,Ponce,NULL,Female,"Puerto Rico",USA,NULL,60
+56,Pontiac,NULL,Female,Illinois,USA,NULL,50
+74,"Poplar Grove        ",NULL,Male,Illinois,USA,NULL,70
+85,"Port Charlotte",100,Female,Florida,USA,4917,80
+0,Portage,NULL,Female,Michigan,USA,NULL,NULL
+76,Portales,10,Female,"New Mexico",USA,189,70
+53,Portland,NULL,Female,Oregon,USA,NULL,50
+70,Potomac,NULL,Female,Maryland,USA,NULL,70
+60,"Prairie Du Sac",NULL,Female,Wisconsin,USA,NULL,60
+72,Prescott,25,Female,Arizona,USA,1010,70
+0,Princeton,NULL,Female,Massachusetts,USA,NULL,NULL
+63,Providence,50,Female,"Rhode Island",USA,5469,60
+68,Quincy,NULL,Male,Illinois,USA,NULL,60
+51,Raleigh,NULL,Female,"North Carolina",USA,NULL,50
+63,"Rancho Santa Margarita",NULL,Female,California,USA,NULL,60
+61,Rantoul,NULL,Female,Illinois,USA,NULL,60
+56,"Redwood City",NULL,Female,California,USA,NULL,50
+59,Reedsburg,40,Female,Wisconsin,USA,6688,50
+52,Reno,NULL,Female,Nevada,USA,NULL,50
+60,Rensselaer,50,Female,"New York",USA,4142,60
+50,Reston,100,Female,Virginia,USA,4328,50
+76,Richfield,NULL,Male,Minnesota,USA,NULL,70
+70,Richmond,NULL,Female,Texas,USA,NULL,70
+23,"Ridge Farm",NULL,Female,Illinois,USA,NULL,20
+23,"River Forest",NULL,Female,Illinois,USA,NULL,20
+57,Riverdale,NULL,Female,Georgia,USA,NULL,50
+77,"Rivers State        ",NULL,Male,"No State",NG,NULL,70
+63,Riverwoods,25,Female,Illinois,USA,7109,60
+71,Rochester,30,Male,"New York",USA,102,70
+76,"Rock Falls",10,Female,Illinois,USA,4031,70
+60,"Rock Island",NULL,Female,Illinois,USA,NULL,60
+59,Rockaway,NULL,Female,"New Jersey",USA,NULL,50
+24,Rockford,NULL,Female,Illinois,USA,NULL,20
+51,Rockton,NULL,Female,Illinois,USA,NULL,50
+46,Rockville,25,Female,Maryland,USA,5912,40
+49,Roscoe,25,Male,Illinois,USA,337,40
+76,Roseburg,NULL,Female,Oregon,USA,NULL,70
+60,Roseville,NULL,Female,California,USA,NULL,60
+63,Roswell,NULL,Male,Georgia,USA,NULL,60
+58,Rushville,NULL,Female,Illinois,USA,NULL,50
+65,Rye,25,Female,"New York",USA,1434,60
+57,Sacramento,25,Female,California,USA,2229,50
+58,"Saint Charles",NULL,Female,Illinois,USA,NULL,50
+69,"Saint Cloud",10,Male,Florida,USA,133,60
+75,"Saint Joseph",NULL,Female,Missouri,USA,NULL,70
+31,"Saint Louis",NULL,Female,Missouri,USA,NULL,30
+65,"Saint Paul",NULL,Female,Minnesota,USA,NULL,60
+56,"Saint Peters",NULL,Female,Missouri,USA,NULL,50
+61,"Saint Petersburg",NULL,Female,Florida,USA,NULL,60
+0,Salem,NULL,Male,Illinois,USA,NULL,NULL
+65,Salisbury,25,Female,"North Carolina",USA,177,60
+0,"San Antonio",50,Male,Texas,USA,1275,NULL
+0,"San Diego",35,Female,California,USA,622,NULL
+0,"San Francisco",NULL,Female,California,USA,NULL,NULL
+79,"San Jose",50,Female,California,USA,117,70
+67,"San Marcos",20,Female,Texas,USA,3951,60
+63,"San Mateo",NULL,Female,California,USA,NULL,60
+76,"San Pedro",25,Female,California,USA,556,70
+76,"San Rafael",NULL,Female,California,USA,NULL,70
+51,Sandpoint,NULL,Male,Idaho,USA,NULL,50
+45,Sandy,NULL,Female,Utah,USA,NULL,40
+64,"Santa Barbara",NULL,Female,California,USA,NULL,60
+71,"Santa Cruz          ",100,Female,California,USA,4036,70
+0,"Santa Fe",NULL,Male,"New Mexico",USA,NULL,NULL
+82,Sarasota,NULL,Female,Florida,USA,NULL,80
+55,Saudi,NULL,Male,"No State",SA,NULL,50
+25,Savoy,NULL,Female,Illinois,USA,NULL,20
+29,Schaumburg,NULL,Female,Illinois,USA,NULL,20
+0,Schenectady,NULL,Female,"New York",USA,NULL,NULL
+57,Scottsdale,NULL,Male,Arizona,USA,NULL,50
+69,Scranton,300,Female,Pennsylvania,USA,8895,60
+50,Seattle,50,Male,Washington,USA,10034,50
+62,Sebastopol,NULL,Male,California,USA,NULL,60
+52,Seneca,NULL,Female,Illinois,USA,NULL,50
+46,Seoul,1000,Female,"No State",KR,3475,40
+0,"Shaker Heights",NULL,Female,Ohio,USA,NULL,NULL
+67,"Shatin NT",NULL,Male,"No State",HK,NULL,60
+46,Shelby,NULL,Female,"North Carolina",USA,NULL,40
+65,Shelbyville,20,Female,Illinois,USA,384,60
+72,"Shenton Park Wa",25,Female,"No State",AU,4652,70
+45,Sherman,25,Female,Illinois,USA,6271,40
+65,Shoreline,NULL,Male,Washington,USA,NULL,60
+76,Shoreview,100,Male,Minnesota,USA,5272,70
+58,Shorewood,NULL,Female,Illinois,USA,NULL,50
+68,Shumway,15,Female,Illinois,USA,137,60
+47,Sidney,NULL,Female,Illinois,USA,NULL,40
+48,"Silver Spring",NULL,Female,Maryland,USA,NULL,40
+73,Silverton,50,Male,Colorado,USA,511,70
+94,Skillman,25,Female,"New Jersey",USA,2974,90
+55,Skokie,NULL,Female,Illinois,USA,NULL,50
+92,Snellville,NULL,Male,Georgia,USA,NULL,90
+58,"Solana Beach",NULL,Female,California,USA,NULL,50
+57,"South Elgin",NULL,Male,Illinois,USA,NULL,50
+67,"South Holland",NULL,Female,Illinois,USA,NULL,60
+46,"South Jacksonville",NULL,Female,Illinois,USA,NULL,40
+58,"South Whitley",50,Female,Indiana,USA,965,50
+61,Sparland,25,Female,Illinois,USA,506,60
+46,Spearfish,NULL,Male,"South Dakota",USA,NULL,40
+60,Spokane,NULL,Female,Washington,USA,NULL,60
+64,Spotsylvania,35,Female,Virginia,USA,586,60
+65,Spring,NULL,Female,Texas,USA,NULL,60
+61,"Spring Grove",NULL,Male,Illinois,USA,NULL,60
+66,Springdale,25,Male,Arkansas,USA,7385,60
+63,Springfield,NULL,Male,Virginia,USA,NULL,60
+64,"St Charles",NULL,Male,Illinois,USA,NULL,60
+61,"St Thomas",NULL,Female,"Virgin Islands",USA,NULL,60
+93,Sterling,10,Female,Illinois,USA,878,90
+76,Stockbridge,100,Male,Georgia,USA,2509,70
+55,Stockton,NULL,Female,Illinois,USA,NULL,50
+52,"Stone Mountain",NULL,Female,Georgia,USA,NULL,50
+72,Streator,NULL,Female,Illinois,USA,NULL,70
+62,"Sugar Grove",NULL,Female,Illinois,USA,NULL,60
+38,Sullivan,NULL,Female,Illinois,USA,NULL,30
+77,Summerfield,25,Female,Florida,USA,1026,70
+81,Summit,NULL,Female,Illinois,USA,NULL,80
+77,"Sun City",NULL,Female,California,USA,NULL,70
+64,"Sun City West",25,Female,Arizona,USA,3177,60
+61,Sunman,NULL,Male,Indiana,USA,NULL,60
+59,Sunnyvale,NULL,Female,California,USA,NULL,50
+67,Surfside,250,Male,Florida,USA,394,60
+84,Surprise,NULL,Female,Arizona,USA,NULL,80
+51,Swansea,NULL,Female,Illinois,USA,NULL,50
+48,Sycamore,NULL,Female,Illinois,USA,NULL,40
+79,Tacoma,NULL,Male,Washington,USA,NULL,70
+60,"Taichung, Taiwan",NULL,Male,"No State",TW,NULL,60
+62,"Taipei              ",NULL,Female,"No State",TW,NULL,60
+74,Tallahassee,200,Female,Florida,USA,8914,70
+50,Tampa,25,Male,Florida,USA,10393,50
+60,Tarrytown,NULL,Male,"New York",USA,NULL,60
+63,Taylorville,NULL,Female,Illinois,USA,NULL,60
+70,Teaneck,50,Female,"New Jersey",USA,152,70
+59,"Tell City",NULL,Male,Indiana,USA,NULL,50
+73,Tempe,NULL,Male,Arizona,USA,NULL,70
+66,Temple,NULL,Female,Texas,USA,NULL,60
+55,"Terre Haute",NULL,Female,Indiana,USA,NULL,50
+60,Texico,NULL,Female,Illinois,USA,NULL,60
+29,Thawville,NULL,Female,Illinois,USA,NULL,20
+60,"Thompsons Station",10,Female,Tennessee,USA,159,60
+56,Thomson,25,Female,Illinois,USA,1127,50
+62,"Thousand Oaks",25,Female,California,USA,3323,60
+65,"Thunder Bay, Ontario",NULL,Female,"No State",CA,NULL,60
+57,"Tinley Park",NULL,Female,Illinois,USA,NULL,50
+82,Tokyo,NULL,Female,"No State",JP,NULL,80
+30,Tolono,NULL,Female,Illinois,USA,NULL,30
+69,Tomball,NULL,Male,Texas,USA,NULL,60
+61,Topeka,NULL,Female,Kansas,USA,NULL,60
+63,Towanda,25,Female,Illinois,USA,237,60
+51,"Trabuco Canyon",NULL,Female,California,USA,NULL,50
+66,Tremont,NULL,Female,Illinois,USA,NULL,60
+66,Trenton,NULL,Female,Illinois,USA,NULL,60
+51,Troy,NULL,Female,Illinois,USA,NULL,50
+82,Tryon,NULL,Female,"North Carolina",USA,NULL,80
+51,Tucker,NULL,Female,Georgia,USA,NULL,50
+71,Tucson,NULL,Male,Arizona,USA,NULL,70
+69,Tuscaloosa,NULL,Female,Alabama,USA,NULL,60
+42,Tuscola,NULL,Female,Illinois,USA,NULL,40
+40,"Two Rivers",50,Female,Wisconsin,USA,6421,40
+67,"Tybee Island",25,Female,Georgia,USA,1991,60
+24,Urbana,NULL,Female,Illinois,USA,NULL,20
+74,Valdosta,NULL,Male,Georgia,USA,NULL,70
+63,"Valley Park",NULL,Female,Missouri,USA,NULL,60
+71,Valparaiso,NULL,Male,Indiana,USA,NULL,70
+85,"Van Nuys",NULL,Female,California,USA,NULL,80
+72,Vancleave,NULL,Female,Mississippi,USA,NULL,70
+56,"Vandalia            ",NULL,Female,Illinois,USA,NULL,50
+41,Venice,100,Female,California,USA,7190,40
+76,Ventura,NULL,Female,California,USA,NULL,70
+64,Vergennes,50,Female,Vermont,USA,2410,60
+24,"Vernon Hills",NULL,Female,Illinois,USA,NULL,20
+31,Verona,NULL,Female,Wisconsin,USA,NULL,30
+62,Vicksburg,100,Female,Mississippi,USA,1110,60
+53,"Villa Park",25,Female,Illinois,USA,96,50
+59,Vinton,NULL,Female,Iowa,USA,NULL,50
+81,"Virginia Beach",100,Female,Virginia,USA,7860,80
+58,Visalia,NULL,Male,California,USA,NULL,50
+60,Vista,NULL,Female,California,USA,NULL,60
+76,Waban,5,Male,Massachusetts,USA,1060,70
+63,Waddell,10,Female,Arizona,USA,8876,60
+85,"Walnut Creek",50,Female,California,USA,465,80
+59,"Walnut Hill",25,Male,Illinois,USA,6042,50
+65,Warrensburg,NULL,Female,Illinois,USA,NULL,60
+23,Warrenville,NULL,Female,Illinois,USA,NULL,20
+46,Warsaw,NULL,Female,Indiana,USA,NULL,40
+23,Wasco,NULL,Female,Illinois,USA,NULL,20
+50,Washington,100,Female,Illinois,USA,2984,50
+50,Watseka,NULL,Female,Illinois,USA,NULL,50
+45,Waukee,10,Female,Iowa,USA,9451,40
+62,Waukesha,NULL,Female,Wisconsin,USA,NULL,60
+57,Weatogue,25,Female,Connecticut,USA,299,50
+53,Weaverville,NULL,Female,"North Carolina",USA,NULL,50
+59,Wentzville,NULL,Female,Missouri,USA,NULL,50
+74,"West Bend",25,Female,Wisconsin,USA,4155,70
+52,"West Chester",NULL,Female,Ohio,USA,NULL,50
+51,"West Chicago",NULL,Female,Illinois,USA,NULL,50
+60,"West Frankfort",NULL,Female,Illinois,USA,NULL,60
+54,"West Lafayette",NULL,Female,Indiana,USA,NULL,50
+48,"West Peoria",NULL,Female,Illinois,USA,NULL,40
+51,Westchester,NULL,Female,Illinois,USA,NULL,50
+70,Westerly,NULL,Male,"Rhode Island",USA,NULL,70
+45,"Western Springs",NULL,Female,Illinois,USA,NULL,40
+63,Westmont,NULL,Male,Illinois,USA,NULL,60
+65,Wexford,25,Female,Pennsylvania,USA,4598,60
+62,Wheaton,NULL,Female,Illinois,USA,NULL,60
+32,Wheeling,NULL,Female,Illinois,USA,NULL,30
+55,"White Heath",NULL,Male,Illinois,USA,NULL,50
+54,Wichita,20,Female,Kansas,USA,4865,50
+58,Willowbrook,30,Female,Illinois,USA,2998,50
+61,Wilmette,NULL,Female,Illinois,USA,NULL,60
+52,Wilmington,NULL,Female,Illinois,USA,NULL,50
+61,Winchester,NULL,Female,Illinois,USA,NULL,60
+46,Windsor,NULL,Female,Colorado,USA,NULL,40
+44,Winfield,NULL,Female,Illinois,USA,NULL,40
+50,Winnebago,NULL,Female,Illinois,USA,NULL,50
+62,Woodbridge,40,Female,Virginia,USA,4686,60
+68,Woodson,NULL,Female,Illinois,USA,NULL,60
+54,Wyckoff,NULL,Female,"New Jersey",USA,NULL,50
+61,Yona,NULL,Female,Guam,USA,NULL,60
+45,"Yongsan-Gu Seoul",300,Female,"No State",KR,10945,40
+54,"Ypsilanti           ",NULL,Female,Michigan,USA,NULL,50
+74,Yucaipa,NULL,Female,California,USA,NULL,70
+50,Yuma,NULL,Male,Arizona,USA,NULL,50
